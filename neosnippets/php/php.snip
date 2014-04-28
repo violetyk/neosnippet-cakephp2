@@ -1,0 +1,303 @@
+# vim: set noet fenc=utf-8 ff=unix ft=neosnippet sts=2 sw=2 ts=2 : 
+
+snippet error_log
+options word
+  error_log(print_r(${1:$value}, true), 3, '/var/tmp/php_error.log');${0}
+
+snippet func
+options word
+  function ${1}(${2}) {
+  ${0}
+ }
+
+snippet vd
+options word
+    var_dump(${1});${0}
+
+snippet php
+options word
+  <?php
+    ${1}
+
+
+snippet pfore
+options word
+  <? foreach ($${1:variable} as $${2:key}${3: =>}): ?>
+  ${0}
+  <? endforeach ?>
+
+snippet pife
+options word
+  <? if (${1:condition}): ?>
+  ${2}
+  <? else: ?>
+  ${0}
+  <? endif ?>
+
+snippet pif
+options word
+  <? if (${1:condition}): ?>
+  ${0}
+  <? endif ?>
+
+snippet pelse
+options word
+  <? else: ?>
+
+snippet pendif
+options word
+  <? endif ?>
+
+
+snippet thisa
+options word
+  $this->alias . ${0}
+
+snippet pethis
+options word
+  <?= $this->${0} ?>
+
+snippet docc
+  /**
+   * ${3:undocumented class variable}
+   *
+   * @var ${4:string}
+   **/
+  ${1:var} \$${2};${0}
+
+snippet docd
+  /**
+   * ${3:undocumented constant}
+   **/
+  define(${1} ${2});${0}
+
+snippet docs
+  /**
+   * ${4:undocumented function}
+   *
+   * @return ${5:void}
+   * @author ${6}
+   **/
+  ${1}function ${2}(${3});${0}
+
+snippet docf
+  /**
+   * ${4:comment}
+   *
+   * @param ${5:int/string/bool/array/object/mixed} ${6:param_name} ${7:comment}
+   * @return ${8:type} ${9:comment}
+   */
+  ${1}function ${2}(${3})
+  {
+    ${0}
+  }
+
+
+snippet doch
+  /**
+   * ${1}
+   *
+   * @author ${2}
+   * @version ${3}
+   * @copyright ${4}
+   * @package ${5:default}
+   **/
+  
+  /**
+   * Define DocBlock
+   **/
+
+snippet doci
+  /**
+   * ${2:undocumented class}
+   *
+   * @package ${3:default}
+   * @author ${4}
+   **/
+  interface ${1}
+  {
+    ${0}
+  } // END interface ${1}
+
+snippet c
+  /**
+   * $0
+   */
+
+snippet class
+  /**
+   * ${1}
+   */
+  class ${2:ClassName}${3:extends}} {
+    $5
+    function ${4:__construct}(${5:argument}) {
+      ${0}
+    }
+  }
+
+snippet def
+  ${1}defined('${2}')${0}
+
+
+snippet do
+options word
+  do {
+    ${0}
+  } while (${1});
+
+snippet if? 
+abbr 三項演算子
+options word
+  $${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;
+
+snippet ifelse
+options word
+  if (${1:condition}) {
+    ${2:# code...}
+  } else {
+    ${3:# code...}
+  }
+  ${0}
+
+snippet if
+options word
+  if (${1:condition}) {
+    ${0}
+  }
+
+snippet echo
+  echo "${1:string}"${0};
+
+snippet else
+  else {
+    ${0}
+  }
+
+snippet elseif
+options word
+  elseif (${1:condition}) {
+    ${0}
+  }
+
+snippet for
+options word
+  for ($${1:i} = ${2:0}; $${3:i} < ${4}; $${5:i}++) { 
+    ${0}
+  }
+
+snippet fore
+options word
+  foreach ($${1:variable} as $${2:key}${3: =>} ${4:value}) {
+    ${0}
+  }
+
+
+snippet con
+  function __construct(${1})
+  {
+    ${0}
+  }
+
+snippet here
+  <<<${1:HTML}
+  ${2:content here}
+  $1;
+
+snippet inc
+  include '${1:file}';${0}
+
+snippet inco
+  include_once '${1:file}';${0}
+
+snippet array
+  $${1:arrayName} = array('${2}' => ${3} ${0});
+
+snippet req
+  require '${1:file}';${0}
+
+snippet reqo
+  require_once '${1:file}';${0}
+
+snippet ret
+  return${1};${0}
+
+snippet retf
+  return false;
+
+snippet rett
+  return true;
+
+snippet case
+  case '${1:variable}':
+    ${0}
+    break;
+
+snippet switch
+abbr sw
+alias switch
+  switch (${1:variable}) {
+    case '${2:value}':
+      ${3:# code...}
+    break;
+    ${0}
+    default:
+      ${4:# code...}
+    break;
+  }
+
+delete try
+snippet try
+  try {
+    ${1}
+  } catch (Exception $e) {
+  
+  }
+  ${0}
+
+snippet throw
+options word
+  throw new ${1}Exception(sprintf('Error! %s::%s L%s', __CLASS__, __FUNCTION__, __LINE__));
+  ${0}
+
+snippet while
+abbr wh
+alias while
+  while (${1}) {
+    ${0}
+  }
+
+snippet gloabals
+options word
+  \$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${0}
+
+snippet cookie
+options word
+  \$_COOKIE['${1:variable}']
+
+snippet env
+options word
+  \$_ENV['${1:variable}']
+
+snippet files
+options word
+  \$_FILES['${1:variable}']
+
+snippet get
+options word
+  \$_GET['${1:variable}']
+
+snippet post
+options word
+  \$_POST['${1:variable}']
+
+snippet request
+options word
+  \$_REQUEST['${1:variable}']
+
+snippet server
+options word
+  \$_SERVER['${1:variable}']
+
+snippet session
+options word
+  \$_SESSION['${1:variable}']

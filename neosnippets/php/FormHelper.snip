@@ -1,0 +1,97 @@
+# vim: set noet fenc=utf-8 ff=unix ft=neosnippet sts=2 sw=2 ts=2 : 
+
+snippet form
+abbr <form>
+options word
+  <?= $this->Form->create() ?>
+		${0}
+	<?= $this->Form->end() ?>
+
+snippet form_create
+abbr <form> タグの開始
+options word
+	<?= $this->Form->create() ?>${0}
+
+snippet form_end
+abbr </form>
+options word
+	<?= $this->Form->end() ?>${0}
+
+snippet form_create/model
+abbr <form>（モデル名の指定）
+options word
+	<?= $this->Form->create('${1:model_name}') ?>${0}
+
+snippet form_create/url
+abbr <form>（Router::url()形式）
+options word
+	<?= $this->Form->create(array('url' => array('controller' => '${1:controller_name}', 'action' => '${2:action_name}', ${3:id_value}')) ?>${0}
+
+snippet button
+abbr <button>
+options word
+	<?= $this->Form->button('${1:title}', array('type' => '${2:button/reset/submit}', 'id' => '${3}', 'class' => '${4}', 'escape' => false)) ?>${0}
+
+snippet input/checkbox
+abbr <input type="checkbox">
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'checkbox', 'label' => ${2:'label_name'/false}, 'class' => '${3:class_name}', 'div' => false, 'error' => false)) ?>${0}
+
+snippet input/text
+abbr <input type="text">
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'text', 'label' => ${2:'label_name'/false}, 'class' => '${3:class_name}', 'maxLength' => ${4:max_length}, 'div' => false, 'error' => false)) ?>${0}
+
+
+snippet input/password
+abbr <input type="password">
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'password', 'label' => ${2:'label_name'/false}, 'class' => '${3:class_name}', 'div' => false, 'error' => false)) ?>${0}
+
+
+# ここまで整理した
+
+
+snippet pefiselect
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'select', 'options' => array(${2:value} => '${3:text}'), 'empty' => ${4:false}, 'label' => false, 'error' => ${5:false}, 'class' => '${6:class_name}')) ?>${0}
+
+snippet pefimultiple
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('multiple' => 'select/checkbox', 'options' => array(${2:value} => '${3:text}'), 'label' => false, 'error' => ${5:false}, 'class' => '${6:class_name}')) ?>${0}
+
+snippet pefiradio
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'radio', 'options' => array(${2:value} => '${3:text}'), 'label' => false, 'legend' => ${4:false}, 'error' => ${5:false}, 'class' => '${6:class_name}', 'separator' => '${7:tag}')) ?>${0}
+
+snippet pefitextarea
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'textarea', 'rows' => ${2:rows}, 'cols' => ${3:cols}, 'maxLength' => ${4:max_length}, 'label' => false, 'error' => ${5:false}, 'class' => '${6:class_name}')) ?>${0}
+
+snippet pefihidden
+options word
+	<?= $this->Form->input('${1:Field.Name}', array('type' => 'hidden', 'label' => false , 'error' => ${2:false})); ?>${0}
+
+snippet pefsubmit
+options word
+	<?= $this->Form->submit('${1:caption}', array('class' => '${2}')) ?>${0}
+
+snippet pefsubmit_confirm
+options word
+	<?= $this->Form->submit('${1:caption}', array('class' => '${2}', 'onclick' => 'return confirm("{3:message}"))) ?>${0}
+
+
+snippet pefcheckbox
+options word
+	<?= $this->Form->checkbox('${1:Field.Name}', array('class' => ${2:class_name})) ?>${0}
+
+snippet peferror
+options word
+	<?= $this->Form->error('${1:Field.Name}', ${2:null}, array( 'wrap' => '${3:}', 'escape' => ${4:false})) ?>${0}
+
+snippet pifisformerror
+options word
+abbr ifフォームのエラーがあるか？
+	<? if ($this->Form->isFieldError('${1:Field.Name}'): ?>
+		${0}
+		<? endif ?>
