@@ -171,24 +171,6 @@ snippet mhabtm
     );
     ${0}
 
-snippet mfind
-options word
-  $this->${1:model_name}->find('${2:all/first/count/list/threaded}', array(
-    'contain' => false,
-    'conditions' => array(
-        '${3:where_column}' => ${4:where_condition},
-    ),
-    // 'fields' => array(
-    //   '',
-    // ),
-    // 'fields' => array('count(id) as "Model__count"'),
-    // 'limit' => 10,
-    // 'order' => array('Model.col' => 'desc/asc'),
-    // 'order' => 'rand()',
-    // 'group' => array('Model.col'),
-    // 'recursive' => -1,
-  ));
-  ${0}
 
 snippet mfindneighbors
 options word
