@@ -1,0 +1,19 @@
+snippet find
+abbr Model/find
+options word
+  $this->${1:model_name}->find('${2:all/first/count/list/threaded}', [
+    'contain' => false,
+    'conditions' => [
+        '${3:where_column}' => ${4:where_condition},
+        // 'Model.col LIKE' => '%' . $q .'%',
+    ],
+    // 'fields' => [
+    // ],
+    // 'fields' => ['count(id) as "Model__count"'],
+    // 'limit' => 10,
+    // 'order' => ['Model.col' => 'desc/asc'],
+    // 'order' => 'rand()',
+    // 'group' => ['Model.col'],
+    // 'recursive' => -1,
+  ]);
+  ${0}
